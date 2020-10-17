@@ -466,26 +466,29 @@
          
               <label class="order-form__label">
                 Имя
+                <input type="text" name="client-name" class="order-form__field" placeholder=" " required autocomplete="off">
                 <svg class="order-form__image">
                   <use href="./images/sprite.svg#person-icon"></use>
                 </svg>
-                <input type="text" name="client-name" class="order-form__field" required  autocomplete="off">
+                
               </label>
               
             <label class="order-form__label">
               Телефон
+              <input type="tel" name="client-tel" class="order-form__field" required autocomplete="off">
               <svg class="order-form__image">
                 <use href="./images/sprite.svg#phone-icon"></use>
               </svg>
-              <input type="tel" name="client-tel" class="order-form__field" required autocomplete="off">
+              
             </label>
             
             <label class="order-form__label">
               Почта
+              <input type="email" name="client-email" class="order-form__field" required autocomplete="off">
               <svg class="order-form__image">
                 <use href="./images/sprite.svg#email-icon"></use>
               </svg>
-              <input type="email" name="client-email" class="order-form__field" required autocomplete="off">
+              
             </label>
   
             <label class="order-form__label order-form__label--margin">
@@ -495,11 +498,14 @@
           
 
             <label class="order-form__policy">
-              <input type="checkbox" name="policy" class="order-form__checkbox">
-              Соглашаюсь с рассылкой и принимаю <a href="" class="form-field__link">Условия договора
+              <input type="checkbox" name="policy" class="order-form__checkbox visually-hidden">
+              <span class="order-form__checkbox--custom"> Соглашаюсь с рассылкой и принимаю <a href="" class="form-field__link">Условия договора</a></span>
             </label>
             
-          <button type="submit" class="button order-form__button">Отправить</button>
+            <div class="order-form__button--centered">
+          <button type="submit" class="button order-form__button--centered">Отправить</button>
+          </div>
+
           </div>
 
         </form>

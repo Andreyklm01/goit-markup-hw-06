@@ -66,6 +66,17 @@ img {
   padding: 0 15px;
   margin: 0 auto;
 }
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+}
 /* ==END GLOBAL== */
 
 /* MODAL */
@@ -154,19 +165,16 @@ img {
 
   display: block;
   margin-bottom: 12px;
-
-  transition: color 250ms var(--cubic-bezier);
 }
 
-.order-form__label:focus-within .order-form__image,
-.order-form__label:focus-within {
+.order-form__field:focus ~ .order-form__image {
   fill: var(--accent-color-main);
-  color: var(--accent-color-main);
 }
 
-.order-form__field:focus-within {
+.order-form__field:focus {
   border-color: var(--accent-color-main);
   outline: transparent;
+  fill: #2196f3;
 }
 
 .order-form__label--margin {
@@ -197,10 +205,6 @@ img {
   transition: border 250ms var(--cubic-bezier);
 }
 
-.order-form__field:focus {
-  border-color: var(--accent-color-main);
-}
-
 .order-form__textarea {
   resize: none;
   height: 120px;
@@ -212,7 +216,8 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.order-form__checkbox:checked:before {
+/* !!!!ПЕРЕДЕЛАТЬ ЧЕКБОКС!!! */
+.order-form__checkbox--custom::before {
   content: "";
 
   display: flex;
@@ -226,7 +231,7 @@ img {
   background-image: url(../images/sprite.svg#vector-white);
   background-size: contain;
   background-color: var(--accent-color-main);
-  fill: var(--additional-color);
+  fill: red;
 }
 
 /* ЧЕКБОКС И ГАЛОЧКА */
@@ -262,10 +267,10 @@ img {
 
 .form-field__link {
   color: var(--accent-color-main);
-  border-bottom: 1px solid var(--accent-color-main);
+  text-decoration: underline;
 }
 
-.order-form__button {
+.order-form__button--centered {
   display: block;
   margin: 0 auto;
 }
