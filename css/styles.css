@@ -132,6 +132,8 @@ img {
   height: 30px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+
+  transition: fill 250ms var(--cubic-bezier);
 }
 
 .close-btn-icon:hover,
@@ -214,58 +216,47 @@ img {
 
 .order-form__textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
+  font-size: 14px;
 }
 
-/* !!!!ПЕРЕДЕЛАТЬ ЧЕКБОКС!!! */
-.order-form__checkbox--custom::before {
-  content: "";
-
-  display: flex;
-  align-items: center;
-
-  width: 16px;
-  height: 16px;
-  border: 2px solid black;
-  border-radius: 2px;
-
-  background-image: url(../images/sprite.svg#vector-white);
-  background-size: contain;
-  background-color: var(--accent-color-main);
-  fill: red;
-}
-
-/* ЧЕКБОКС И ГАЛОЧКА */
-/* .order-form__checkbox {
-  width: 16px;
-  height: 15px;
-  outline: transparent;
-  background-color: transparent;
-
-  border: 3px solid var(--secondary-text-color);
-  border-radius: 2px;
-}
-
-.order-form__image--vector {
-  position: absolute;
-  width: 11px;
-  height: 8px;
-
-  left: 16.5px;
-  top: 5.5px;
-  fill: red;
-} */
+/* ЧЕКБОКС!!! */
 
 .order-form__policy {
-  position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding-left: 13px;
   margin-bottom: 30px;
+
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
-  text-align: center;
 }
 
-.form-field__link {
+.order-form__policy::before {
+  content: "";
+  display: inline-flex;
+  margin-right: 5px;
+
+  width: 16px;
+  height: 16px;
+
+  border: 2px solid #000;
+  border-radius: 2px;
+
+  transition: all 250ms var(--cubic-bezier);
+}
+
+.order-form__checkbox:checked + .order-form__policy::before {
+  background-color: var(--accent-color-main);
+  background-image: url(../images/modal/vector.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  border-color: transparent;
+}
+
+.order-form__link {
   color: var(--accent-color-main);
   text-decoration: underline;
 }

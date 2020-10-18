@@ -57,8 +57,9 @@
           >
         </li>
       </ul>
+      </div>
     </header>
-    </div>
+    
     <main class="main">
       <!-- HERO -->
       <section class="hero">
@@ -438,9 +439,9 @@
               <em class="social-links__title">Подпишитесь на рассылку</em>
               <div class="subscribe__form--position">
               <label>
-                  <input type="email" placeholder="E-mail" class="subscribe__form-field">
+                  <input type="email" name="client-email(subscribe)" placeholder="E-mail" class="subscribe__form-field">
                 </label>
-                <button type="button" class="button send-button">Подписаться
+                <button type="submit" class="button send-button">Подписаться
                   <svg class="subscribe__icon--send">
                     <use href="./images/sprite.svg#send-icon"></use>
                   </svg>
@@ -493,18 +494,16 @@
   
             <label class="order-form__label order-form__label--margin">
                 Комментарий
-                <textarea name="" class="order-form__field order-form__textarea" placeholder="Введите текст" autocomplete="off"></textarea>
+                <textarea name="client-comment" class="order-form__field order-form__textarea" placeholder="Введите текст" autocomplete="off"></textarea>
               </label>
           
-
-            <label class="order-form__policy">
-              <input type="checkbox" name="policy" class="order-form__checkbox visually-hidden">
-              <span class="order-form__checkbox--custom"> Соглашаюсь с рассылкой и принимаю <a href="" class="form-field__link">Условия договора</a></span>
+              <input type="checkbox" id="check-policy" name="policy" class="order-form__checkbox visually-hidden" value="accept-policy" checked>
+            <label for="check-policy" class="order-form__policy">
+              Соглашаюсь с рассылкой и принимаю &nbsp;<a href="#" class="order-form__link">Условия
+                договора</a>
             </label>
-            
-            <div class="order-form__button--centered">
+              
           <button type="submit" class="button order-form__button--centered">Отправить</button>
-          </div>
 
           </div>
 
